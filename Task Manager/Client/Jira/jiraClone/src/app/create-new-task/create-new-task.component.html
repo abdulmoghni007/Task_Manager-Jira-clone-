@@ -1,0 +1,85 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="main">
+<div class="container">
+  <div class="row justify-content-center"> <!-- Centering the form -->
+    <div class="col-md-6"> <!-- Reduced column width -->
+      <h1>Create New Task</h1>
+      <form [formGroup]="form" (submit)="createNewTask()">
+        <div class="form-group">
+          <label for="taskName">Task Name <span class="require"></span></label>
+          <input type="text" class="form-control" id="taskName" placeholder="Task Name" formControlName="taskName" required />
+          <p *ngIf="isFieldInvalid('taskName')" class="text-danger">{{getErrorMessage('taskName','Task Name')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="title">Title <span class="require"></span></label>
+          <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title" required />
+          <p *ngIf="isFieldInvalid('title')" class="text-danger">{{getErrorMessage('title','Title')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <div class="editor" id="description">
+            <angular-editor
+              class="text-black bg-white editor"
+              [placeholder]="'Enter post caption here...'"
+              formControlName="description"
+              [config]="config"
+              width=""
+              name="editor"
+            ></angular-editor>
+          </div>
+          <p *ngIf="isFieldInvalid('description')" class="text-danger">{{getErrorMessage('description','Description')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="issueId">Issue</label>
+          <select class="form-control" id="issueId" formControlName="issueId" required>
+            @for(issue of issues; track $index){
+            <option value={{issue.id}}>{{issue.issue}}</option>
+            }
+          </select>
+          <p *ngIf="isFieldInvalid('issueId')" class="text-danger">{{getErrorMessage('issueId','Issue')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="assignId">User Assign</label>
+          <select class="form-control" id="assignId" formControlName="assignId" required>
+            @for(user of users; track $index){
+            <option value={{user.id}}>{{user.name}}</option>
+            }
+          </select>
+          <p *ngIf="isFieldInvalid('assignId')" class="text-danger">{{getErrorMessage('assignId','Assign')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="priorityId">Priority</label>
+          <select class="form-control" id="priorityId" formControlName="priorityId" required>
+            @for(priority of priorities; track $index){
+            <option value={{priority.id}}>{{priority.priority}}</option>
+            }
+          </select>
+          <p *ngIf="isFieldInvalid('priorityId')" class="text-danger">{{getErrorMessage('priorityId','Priority')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="taskStatusId">Task Status</label>
+          <select class="form-control" id="taskStatusId" formControlName="taskStatusId" required>
+            @for(taskStatus of taskStatuses; track $index){
+            <option value={{taskStatus.id}}>{{taskStatus.status}}</option>
+            }
+          </select>
+          <p *ngIf="isFieldInvalid('taskStatusId')" class="text-danger">{{getErrorMessage('taskStatusId','Task Status')}}</p>
+        </div>
+        <div class="form-group">
+          <label for="dueDate">Task Due Date</label>
+          <input type="date" class="form-control" id="dueDate" formControlName="dueDate" required>
+          <p *ngIf="isFieldInvalid('dueDate')" class="text-danger">{{ getErrorMessage('dueDate', 'Due Date') }}</p>
+        </div>
+        <div class="form-group mt-2">
+          <button type="submit" class="btn btn-primary">
+            Create New Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+</div>

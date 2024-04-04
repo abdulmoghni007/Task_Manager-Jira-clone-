@@ -1,0 +1,44 @@
+/* Custom Styles */
+
+.main
+{
+  background-color: #f8f9fa; /* Light gray */
+}
+
+.container {
+  background: linear-gradient(135deg, #e0f2e8, #ffffff); /* Gradient background with a slightly more greenish tint transitioning to white */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Box shadow */
+}
+
+h2 {
+  color: #000000; /* Black */
+}
+
+.form-group label {
+  color: #000000; /* Black */
+}
+
+.form-control {
+  border-color: #007bff; /* Blue border */
+}
+
+.form-control:read-only {
+  background-color: #f8f9fa; /* Light gray */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Blue */
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+}
+.description{
+  height: 150px;
+  width: 100%;
+  overflow-y: scroll;
+}

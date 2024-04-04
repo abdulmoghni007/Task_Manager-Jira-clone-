@@ -1,0 +1,154 @@
+<app-navigation-bar></app-navigation-bar>
+<section style="background-color: #eee;">
+
+@for(task of taskDetail; track $index){
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                 class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{task.assignee.name}}</h5>
+            <p class="text-muted mb-1">Full Stack Developer</p>
+            <p class="text-muted mb-4">{{task.assignee.email}}</p>
+
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <span class="fas fa-globe fa-lg text-nowrap">
+                  Priority :&nbsp;
+                </span> <br>
+
+                <select class="form-select" id="priorityId" [(ngModel)]="prioityId" >
+                  <option value=0 selected disabled>{{task.priority.priority}}</option>
+
+                  @for(priority of priorities; track $index){
+                    <option value={{priority.id}}>{{priority.priority}}</option>
+                  } @empty {
+                    <option value=0>You Don't Have Rights</option>
+                  }
+                </select>
+
+
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab  fa-lg" style="color: #333333;"></i>
+                <span class="fas  fa-lg text-nowrap">
+                  Assignee :&nbsp;
+                </span> <br>
+                <select class="form-select" id="assignId" [(ngModel)]="assigneeId" >
+                  <option value=0 selected disabled>{{task.assignee.name}}</option>
+
+                  @for(user of users; track $index){
+                    <option value={{user.id}}>{{user.name}}</option>
+                  } @empty {
+                    <option value=0>You Don't Have Rights</option>
+                  }
+                </select>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab  fa-lg" style="color: #55acee;"></i>
+                <span class="fas fa-globe fa-lg text-nowrap">
+                  Issue :&nbsp;
+                </span> <br>
+                <select class="form-select" id="issueId" [(ngModel)]="issueId" >
+                  <option value=0 selected disabled>{{task.issue.issue}}</option>
+
+                  @for(issue of issues; track $index){
+                    <option value={{issue.id}}>{{issue.issue}}</option>
+                  } @empty {
+                    <option value=0>You Don't Have Rights</option>
+                  }
+                </select>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab  fa-lg" style="color: #ac2bac;"></i>
+                <span class="fas fa-globe fa-lg text-nowrap">
+                  Status :&nbsp;
+                </span> <br>
+                <select class="form-select" id="statusId" [(ngModel)]="statusId" >
+                  <option value=0 selected disabled>{{task.task_status.status}}</option>
+
+                  @for(taskStatus of taskStatuses; track $index){
+                    <option value={{taskStatus.id}}>{{taskStatus.status}}</option>
+                  } @empty {
+                    <option value=0>You Don't Have Rights</option>
+                  }
+                </select>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-lg" style="color: #3b5998;"></i>
+                <button type="submit" class="btn btn-primary" (click)="updateTaskDetail(task.id)">
+                  Update Task
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Task Id</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{task.task_id}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Task Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{task.name}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Task Title</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{task.title}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Due Date</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{task.due_date}}</p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <p class="mb-4"><span class="text-primary font-italic me-1"></span> Description
+                </p>
+
+                <div [innerHTML]="task.description"></div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+}

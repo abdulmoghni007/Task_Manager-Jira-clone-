@@ -1,0 +1,279 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="main">
+<div class="container">
+
+  <div class="table-responsive">
+    <table class="table table-striped mt-5">
+      <thead>
+      <tr>
+        <th><label for="priorityFilter">Priority:</label><select id="priorityFilter" [(ngModel)]="selectedPriority">
+          <option value="">All</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+
+        </select></th>
+
+
+
+        <th><label for="issueFilter">Issue:</label><select id="issueFilter" [(ngModel)]="selectedIssue">
+          <option value="">All</option>
+          <option value="Tech">Tech</option>
+          <option value="Non-Tech">Non-Tech</option>
+
+
+        </select></th>
+
+
+        <th><label for="statusFilter">Status:</label><select id="statusFilter" [(ngModel)]="selectedStatus">
+          <option value="">All</option>
+          <option value="Created">Created</option>
+          <option value="Completed">Completed</option>
+          <option value="Stagging">Stagging</option>
+          <option value="Pre-Production">Pre-Production</option>
+          <option value="Production">Production</option>
+
+        </select></th>
+
+<!--        <th><label for="searchBox">Search:</label>-->
+<!--          <input type="text" id="searchBox" [(ngModel)]="searchQuery"></th>-->
+
+
+
+
+
+      <tr>
+        <th>Task Id</th>
+        <th>Task Name</th>
+        <th>Issue</th>
+        <th>Priority</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Assign to</th>
+        <th></th>
+      </tr>
+      </thead>
+      @for(task of tasks; track $index){
+      <tbody>
+
+
+
+       @if (selectedIssue!="" && selectedPriority=="" && selectedStatus==""){
+
+        @if(selectedIssue==task.issue.issue){
+
+          <tr>
+            <td >{{task.task_id}}</td>
+            <td>{{task.name}}</td>
+            <td >
+              {{task.issue.issue}}</td>
+            <td>{{task.priority.priority}}</td>
+            <td>{{task.due_date}}</td>
+            <td>
+
+              {{task.task_status.status}}
+
+
+            </td>
+            <td>{{task.assignee.name}}</td>
+            <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+          </tr>
+        }
+
+      }
+
+        @else if (selectedIssue=="" && selectedPriority!="" && selectedStatus==""){
+
+          @if(selectedPriority==task.priority.priority){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+
+        @else if (selectedIssue=="" && selectedPriority=="" && selectedStatus!=""){
+
+          @if(selectedStatus==task.task_status.status){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+        @else if (selectedIssue!="" && selectedPriority!="" && selectedStatus==""){
+
+          @if(selectedIssue==task.issue.issue && selectedPriority==task.priority.priority){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+        @else if (selectedIssue!="" && selectedPriority=="" && selectedStatus!=""){
+
+          @if(selectedIssue==task.issue.issue && selectedStatus==task.task_status.status){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+
+        @else if (selectedIssue=="" && selectedPriority!="" && selectedStatus!=""){
+
+          @if(selectedPriority==task.priority.priority && selectedStatus==task.task_status.status){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+        @else if (selectedIssue!="" && selectedPriority!="" && selectedStatus!=""){
+
+          @if(selectedIssue==task.issue.issue && selectedPriority==task.priority.priority && selectedStatus==task.task_status.status){
+
+            <tr>
+              <td>{{task.task_id}}</td>
+              <td>{{task.name}}</td>
+              <td>{{task.issue.issue}}</td>
+              <td>{{task.priority.priority}}</td>
+              <td>{{task.due_date}}</td>
+              <td>
+
+                {{task.task_status.status}}
+
+
+              </td>
+              <td>{{task.assignee.name}}</td>
+              <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+            </tr>
+          }
+
+        }
+
+      @else{
+
+        <tr>
+          <td>{{task.task_id}}</td>
+          <td>{{task.name}}</td>
+          <td>{{task.issue.issue}}</td>
+          <td>{{task.priority.priority}}</td>
+          <td>{{task.due_date}}</td>
+          <td>
+
+            {{task.task_status.status}}
+
+
+          </td>
+          <td>{{task.assignee.name}}</td>
+          <td><button class="btn btn-info" (click)="setPostId(task.task_id)">View Detail</button></td>
+        </tr>
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+      </tbody>
+      }@empty{
+        <h1>Nothing to show</h1>
+
+    }
+    </table>
+  </div>
+  <div class="pagination gap-2 justify-content-end">
+    @for (page of getPageNumbers(pages.totalPages);track $index){
+      <button
+        class="btn btn-primary"
+        [class.active]="currentPage === page"
+        (click)="changePage(page)">
+        {{ page }}
+      </button>
+    }
+
+  </div>
+</div>
+
+
+</div>
+
+
+
