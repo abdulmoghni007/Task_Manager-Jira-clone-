@@ -77,6 +77,13 @@ Below is the User Candidate Login page when there are no tasks:
 
 ![User Candidate Login](./Task%20Manager/Client/Jira/jiraClone/src/assets/UserCandidate.png)
 
+### User Role Permissions
+
+Below is an illustration showing that the user role has no rights except for changing the status of tasks:
+
+![User Role Permissions](./Task%20Manager/Client/Jira/jiraClone/src/assets/user%20role%20have%20now%20rights.png)
+
+
 ### Admin Dashboard
 
 Below is the Admin Dashboard of the application:
@@ -90,4 +97,7 @@ Below is an illustration of the admin's capability to change the assignee of a t
 
 ![Admin Change Assignee](./Task%20Manager/Client/Jira/jiraClone/src/assets/Admin%20have%20right%20to%20change%20asignee.png)
 
+## Navigation Bar Differences: User vs. Admin
+
+In our application, the navigation bar is tailored to reflect the permissions associated with different user roles, specifically the Admin and User roles. The Admin navigation bar is equipped with additional functionalities that empower administrators to effectively manage tasks and projects. Notably, Admins have the right to create new tasks, enabling them to delegate work and monitor project progress actively. This capability is crucial for maintaining an organized workflow, as it allows Admins to assign tasks to team members, set deadlines, and prioritize workloads based on project needs. Conversely, the User navigation bar is designed with a more limited scope of functionality, as users do not possess the rights to create tasks. Instead, their focus is primarily on viewing and updating tasks assigned to them. This distinction ensures that the responsibility of task creation and project management remains with those who have the necessary oversight and control, while users can concentrate on completing their assigned tasks efficiently. By implementing these role-specific navigation features, the application fosters a structured environment that enhances collaboration and accountability within the team.
 
