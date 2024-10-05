@@ -5,7 +5,7 @@ This is a Jira clone built using **Angular** for the frontend and **Laravel** fo
 ## Table of Contents
 - [Features](#features)
 - [Technologies](#technologies)
-- [Preview Of Application](#previewOfApplication)
+- [Preview](#preview)
 
 ## Features
 
@@ -57,6 +57,11 @@ This is a Jira clone built using **Angular** for the frontend and **Laravel** fo
 - Composer
 - MySQL or any preferred database
 
-## Preview Of Application
-###
+## Preview
+
+## Register Page
+
+Below is the Register page of the application:
+
+![Register Page](./Task Manager/Client/Jira/jiraClone/src/assets/Register.png)
 
