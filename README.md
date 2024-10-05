@@ -59,9 +59,8 @@ This is a Jira clone built using **Angular** for the frontend and **Laravel** fo
 
 ## Preview
 
-## Register Page
+### Register Page
 
 Below is the Register page of the application:
 
-![Register Page](./Task Manager/Client/Jira/jiraClone/src/assets/Register.png)
-
+![Register Page](./Task%20Manager/Client/Jira/jiraClone/src/assets/Register.png)
