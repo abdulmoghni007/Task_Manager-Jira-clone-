@@ -65,8 +65,29 @@ Below is the Register page of the application:
 
 ![Register Page](./Task%20Manager/Client/Jira/jiraClone/src/assets/Register.png)
 
-## Login Page
+### Login Page
 
 Below is the Login page of the application:
 
 ![Login Page](./Task%20Manager/Client/Jira/jiraClone/src/assets/Login.png)
+
+### User Candidate Login (when there is no task assign)
+
+Below is the User Candidate Login page when there are no tasks:
+
+![User Candidate Login](./Task%20Manager/Client/Jira/jiraClone/src/assets/UserCandidate.png)
+
+### Admin Dashboard
+
+Below is the Admin Dashboard of the application:
+
+![Admin Dashboard](./Task%20Manager/Client/Jira/jiraClone/src/assets/admin%20Dash%20board.png)
+
+
+### Role-Based Activity: Change Assignee
+
+Below is an illustration of the admin's capability to change the assignee of a task:
+
+![Admin Change Assignee](./Task%20Manager/Client/Jira/jiraClone/src/assets/Admin%20have%20right%20to%20change%20asignee.png)
+
+
