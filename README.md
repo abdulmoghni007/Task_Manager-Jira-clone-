@@ -41,7 +41,7 @@ This is a Jira clone built using **Angular** for the frontend and **Laravel** fo
 - **Angular**: Framework for building the frontend
 - **Tailwind CSS**: Responsive and modern UI design
 - **TypeScript**: Strongly typed JavaScript for scalable apps
-- **NgRx**: State management
+
 
 ### Backend (Laravel)
 - **Laravel**: Framework for API development
