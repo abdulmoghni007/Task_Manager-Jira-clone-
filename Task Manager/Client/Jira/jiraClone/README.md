@@ -1,6 +1,10 @@
 # JiraClone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+It is designed to manage tasks, track progress, and organize workflows for teams. The clone typically includes features such as:
+Issue Tracking: Users can create, assign, and manage issues or tasks. Issues can be categorized into types like bugs, features, and improvements.
+User Roles and Permissions: Allows different levels of access, such as admins, developers, and project managers.
+Search and Filters: Advanced filtering and search functionality to find tasks based on criteria like assignee, status, or priority.
+
 
 ## Development server
 
